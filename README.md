@@ -1,6 +1,6 @@
 # Resume: Akshit Soni
 
-![Resume](resume.png)
+![Resume](https://github.com/Akshit-Soni/Resume/blob/main/resume.png)
 
 
 
