@@ -53,11 +53,6 @@ jobs:
           OUTPUT_PNG="resume.png"
 
           convert -density 900 -background white -alpha off "$INPUT_PDF" -resize 25% -quality 90 -colorspace RGB "$OUTPUT_PNG"
-
-      - name: Update cache buster in README
-        run: |
-          CACHE_BUSTER=$(date +%s)
-          sed -i "s/cache_buster=[0-9]*/cache_buster=${CACHE_BUSTER}/g" README.md
       
       - name: Update README with image
         run: |
@@ -85,7 +80,6 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add "Akshit Soni.pdf" resume.png README.md
           git commit -m "[Automated] Update resume PDF and preview image" || echo "No changes to commit"
-          git commit -m "Update cache buster in README"
       
       - name: Push changes
         uses: ad-m/github-push-action@master
